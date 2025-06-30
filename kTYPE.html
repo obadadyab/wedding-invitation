@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>دعوة زفاف أسامة وشذى</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Reem+Kufi+Ink&display=swap" rel="stylesheet" />
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Reem Kufi Ink', 'Amiri', serif;
+    background-color: #faf6f0;
+    background-image: url('Green and White Wedding Zoom Virtual Background.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #5b3e2a;
+    animation: fadeInDown 2s ease-in-out;
+  }
+  @media (max-width: 768px) {
+    body {
+      background-size: contain;
+      background-position: center top;
+    }
+  }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .content-container {
+    background-color: transparent;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 25px rgba(0,0,0,0.08);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .flower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+    animation: fall linear infinite;
+    z-index: 0;
+    user-select: none;
+    pointer-events: none;
+  }
+  @keyframes fall {
+    0% {
+      transform: translateY(-200vh);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 1;
+    }
+  }
+
+  /* Responsive typography */
+  @media (max-width: 768px) {
+    .text-6xl {
+      font-size: 3rem; /* smaller for mobile */
+    }
+    .text-4xl {
+      font-size: 1.75rem;
+    }
+    .text-2xl {
+      font-size: 1.25rem;
+    }
+    .content-container {
+      padding: 1rem;
+      margin: 20px 10px;
+      max-width: 100%;
+    }
+    .flower {
+      width: 30px;
+      height: 30px;
+      font-size: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<section class="content-container">
+  <!-- Quran Verse -->
+  <div class="text-4xl md:text-3xl font-semibold leading-relaxed mb-6" style="line-height: 1.5;">
+    ﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا<br />
+    لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً﴾
+  </div>
+
+  <!-- Parent Names -->
+  <p class="text-2xl mb-2">يتشرف كلا من</p>
+  <p class="text-xl font-bold">السيد ناصر ذياب &nbsp; و &nbsp; السيد حسين ذياب</p>
+
+  <!-- Invitation -->
+  <p class="text-xl mt-4 mb-2">بدعوتكم لحضور حفل زفاف</p>
+  <h1 class="text-6xl font-bold text-pink-700 mb-4">أسامة و شذى</h1>
+
+  <!-- Countdown Timer -->
+  <div class="text-lg mb-6">
+    <strong>العد التنازلي للزفاف:</strong>
+    <div id="countdown" class="text-2xl text-pink-600 font-bold mt-2"></div>
+  </div>
+
+  <!-- Event Details -->
+  <p class="text-lg mb-4">وذلك بمشيئة الله تعالى</p>
+  <div class="p-4 rounded-xl inline-block shadow-md text-right" style="max-width: 350px; margin: 0 auto;">
+    <p><strong>📆 التاريخ:</strong> الخميس 10/7/2025</p>
+    <p><strong>📍 المكان:</strong> <a href="https://maps.app.goo.gl/Vhomt8rBhhV5qHv1A" target="_blank" class="text-blue-800 underline">قصر الروبي للاحتفالات</a></p>
+    <p><strong>⏰ الوقت:</strong> 9:00 - 11:00 مساءً</p>
+  </div>
+
+  <!-- Closing Line -->
+  <p class="mt-6 text-lg italic">نتشرف بحضوركم ومشاركتكم أفراحنا</p>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const petalsLeft = 15;
+    const petalsRight = 15;
+    const emojis = ['💍', '💐', '👰🏻‍♀️', '🤵🏻'];
+
+    function getLeftPosition() {
+      return window.innerWidth <= 768
+        ? Math.random() * 20 + 1
+        : Math.random() * 10 + 1;
+    }
+    function getRightPosition() {
+      return window.innerWidth <= 768
+        ? 80 + Math.random() * 18
+        : 90 + Math.random() * 8;
+    }
+
+    for (let i = 0; i < petalsLeft; i++) {
+      const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.textContent = emoji;
+      flower.style.left = `${getLeftPosition()}%`;
+      flower.style.animationDuration = `${5 + Math.random() * 5}s`;
+      document.body.appendChild(flower);
+    }
+
+    for (let i = 0; i < petalsRight; i++) {
+      const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.textContent = emoji;
+      flower.style.left = `${getRightPosition()}%`;
+      flower.style.animationDuration = `${5 + Math.random() * 5}s`;
+      document.body.appendChild(flower);
+    }
+
+    const countDownDate = new Date("July 10, 2025 21:00:00").getTime();
+    const countdownElement = document.getElementById("countdown");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      if (distance < 0) {
+        countdownElement.innerHTML = "الحفل اليوم!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `${days} يوم ${hours} ساعة ${minutes} دقيقة ${seconds} ثانية`;
+    }, 1000);
+  });
+</script>
+
+</body>
+</html>
